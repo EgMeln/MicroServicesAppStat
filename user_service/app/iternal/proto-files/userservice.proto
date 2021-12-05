@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package go.micro.srv.user;
+
+option go_package = "/grpcProto";
+
+service UserService{
+  rpc GetAllUser(Empty) returns (LogUser){}
+  rpc GetUserById(UserId) returns (LogUser){}
+  rpc AddUser   (UserAdd) returns (LogUser){}
+  rpc DeleteUser(UserDelete) returns (LogUser){}
+}
+
+message LogUser{
+  string resultStr = 1;
+}
+message UserId{
+  int64 id = 1;
+}
+message UserAdd{
+  string username = 1;
+  string email = 2;
+  string password = 3;
+}
+message UserDelete{
+  string username = 1;
+}
+message Empty{
+
+}

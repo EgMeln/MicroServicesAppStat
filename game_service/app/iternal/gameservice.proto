@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package go.micro.srv.game;
+
+option go_package = "/grpcProto";
+
+service GameService{
+  rpc Game32(GameEmpty) returns (LogFight){}
+  rpc Game64(GameEmpty) returns (LogFight){}
+  rpc Game128(GameEmpty) returns (LogFight){}
+}
+message LogFight{
+  string fullFight = 1;
+}
+message GameEmpty{
+
+}

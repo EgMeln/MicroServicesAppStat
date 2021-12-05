@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package go.micro.srv.grpc;
+
+option go_package = "/grpcProto";
+
+service InfoService{
+  rpc StrGame32(InfoEmpty) returns (AnswerInfo){}
+  rpc StrGame64(InfoEmpty) returns (AnswerInfo){}
+  rpc StrGame128(InfoEmpty) returns (AnswerInfo){}
+  rpc AllUsers(InfoEmpty) returns (AnswerInfo){}
+  rpc UserByID(InfoEmpty) returns (AnswerInfo){}
+  rpc AddUser(InfoEmpty) returns (AnswerInfo){}
+  rpc UserDelete(InfoEmpty) returns (AnswerInfo){}
+}
+message AnswerInfo{
+  string ansSTR = 1;
+}
+message InfoEmpty{
+
+}
